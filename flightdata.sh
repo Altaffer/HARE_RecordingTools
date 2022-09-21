@@ -13,7 +13,7 @@ roslaunch ~/catkin_ws/src/Onboard-SDK-ROS/launch/dji_vehicle_node.launch & echo 
 
 
 # recording the topics
-rosbag record /dji_osdk_ros/attitude /dji_osdk_ros/battery_state /dji_osdk_ros/flight_status /dji_osdk_ros/height_above_takeoff /dji_osdk_ros/imu /dji_osdk_ros/gps_position /dji_osdk_ros/local_position /dji_osdk_ros/rc /dji_osdk_ros/rc_connection_status /dji_osdk_ros/velocity & echo $! >> $FILE
+rosbag record $(cat djiRosTopics.json | jq -r '.active_topics | .[]') $! >> $FILE
 
 # acceleration ground fused
 #rosbag record /dji_osdk_ros/acceleration_ground_fused & echo $! >> $FILE
