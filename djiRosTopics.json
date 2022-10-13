@@ -8,7 +8,8 @@
         "local_position": "/dji_osdk_ros/local_position",
         "rc": "/dji_osdk_ros/rc",
         "rc_connection_status": "/dji_osdk_ros/rc_connection_status",
-        "velocity": "/dji_osdk_ros/velocity"
+        "velocity": "/dji_osdk_ros/velocity",
+        "gps_health": "/dji_osdk_ros/gps_health"
     }
 }
 
