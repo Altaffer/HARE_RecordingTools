@@ -49,6 +49,7 @@ def gps_check(msg):
 cfg = {
 	# topic             [ hz,   type, tollerance,  custom check ]
 	"/dji_osdk_ros/imu": [400, Imu, 0.02, None],
+	"/dji_osdk_ros/attitude": [400, 
 	"/ublox/fix": [8, NavSatFix, 0.02, gps_check]
 }
 
@@ -69,16 +70,3 @@ for key in cfg:
 	h = cfg[key]
 	topics.append(TopicAnalysis(key, h[0], h[1], h[2], h[3]))
 
-while len(topics) > 0:
-	print("checking topics")
-	for t in range(len(topics)):
-		if topics[t].reported:
-			topics.pop(t)
-
-	time.sleep(2)
-
-print("===================================\n Go for flight \n==================================")
-sys.exit(0)
-
-
-# maybe start recording from here?

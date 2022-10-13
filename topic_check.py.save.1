@@ -49,6 +49,7 @@ def gps_check(msg):
 cfg = {
 	# topic             [ hz,   type, tollerance,  custom check ]
 	"/dji_osdk_ros/imu": [400, Imu, 0.02, None],
+	"/dji_osdk_ros/attitude": [400, 
 	"/ublox/fix": [8, NavSatFix, 0.02, gps_check]
 }
 
