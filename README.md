@@ -24,3 +24,8 @@ TMUX hax
 	- Modify ~/.tmux.conf
 		set -g mode-mouse on
 		set -g default-terminal "xterm-256color"
+
+NMCLI things
+- Funky things with the hotspot:
+	- sudo nmcli con delete hare_hotspot
+	- sudo nmcli dev wifi connect hare_hotspot password "hare-field"

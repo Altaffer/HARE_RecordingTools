@@ -1,0 +1,39 @@
+Preflight Check List - Hardware + Software
+
+Hardware:
+* cameras are onboard
+	* flir attached
+	* 2 rgb attached
+	* micasense attached
+* Flight tags removed 
+* External SSD is connected and secured
+* Flir is clicking
+* Wires are secured and not blocking sensors
+* DJI Batteries are in the drone
+* Both WIFI modules connected with blinking lights
+* Arms are properlly locked
+
+Software:
+* lsusb
+	* check for flir
+	* ublox
+	* sandisk
+* dmesg --follow to double check flir blip
+* validate SSd name
+	* update topic_check.py with SSD name
+* validate flightdata.sh
+	* right launch files are going:
+		* nv12_test.launch
+			* RGB + Flir launch
+		* DJI_vehicle_node.launch
+			* DJI flight data node
+		* hare_gps.launch
+			* ublox launch
+		* main_v2.py
+			* micasense launch
+* validate topic_check.py
+	* Check 15 default topics
+* power on drone
+	* swap to drone power
+	* remove shore power
+	* verify payload is still powered
