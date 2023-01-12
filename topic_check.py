@@ -57,7 +57,7 @@ class TopicAnalysis:
 def gps_check(msg):
 	# fix this, cov is the wrong name
 	gps_check.counter += 1
-	if msg.position_covariance[0] < 2:
+	if msg.position_covariance[0] < 0.03:
 		return True
 	if gps_check.counter == 100:
 		print(f"{bcolors.WARNING}ubx accuracy: {msg.position_covariance[0]}")
